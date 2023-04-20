@@ -2,10 +2,11 @@ public class Main {
     static int countStars = 0;
     public static void main(String[] args) {
         // print(10);
-        printDiamond(5);
+        printDiamond(7);
     }
 
     public static void printDiamond(int width) {
+        int nu = width/2;
 
         int halfWidth = width / 2;
         int num = width/2;
@@ -33,10 +34,12 @@ public class Main {
                     System.out.print("*");
                 }
 
-                for (int i = 1; i <= num+1; i++) {
+                for (int i = nu; i >= 1; i--) {
                     System.out.print(" ");
-                    num--;
                 }
+
+                nu--;
+
                 System.out.print(" *");
 
                 System.out.println();
@@ -47,11 +50,14 @@ public class Main {
 
         int space = 1;
         halfWidth = width / 2;
-        for (int x = width - halfWidth; x >= 1; x--) {
+        int z=1;
+        for (int x = halfWidth+1 ; x >= 1; x--) {
 
-            if (x >= width/2) {
+
+            if (z<=width/2){
                 System.out.print("* ");
                 countStars++;
+                z++;
             }
 
             for (int i = 1; i <= space; i++) {
@@ -84,7 +90,6 @@ public class Main {
         for (int n = 1; n <= width + 3; n++) {
             System.out.print("*");
         }
-
     }
 
 }
